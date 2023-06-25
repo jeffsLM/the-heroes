@@ -1,6 +1,6 @@
 const darkTheme = {
   colors: {
-    primary: '#F5315D',
+    primary: '#ED1D24',
     secondary: '#545FFF',
     tertiary: '#009FFF',
   },
@@ -21,7 +21,7 @@ const darkTheme = {
 
 const lightTheme = {
   colors: {
-    primary: '#F5315D',
+    primary: '#ED1D24',
     secondary: '#545FFF',
     tertiary: '#009FFF',
   },

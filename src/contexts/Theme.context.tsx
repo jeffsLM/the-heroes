@@ -1,13 +1,14 @@
 import { createContext, ReactNode, useContext, useState } from 'react'
 import { ThemeProvider } from 'styled-components'
 
-import { theme } from '../styles/theme'
+import { theme } from '@/styles/theme'
 
-import { ThemeProps } from '../types/theme'
+import { ThemeProps } from '@/types/theme'
 
 interface ThemeContextData {
+  isDarkMode: boolean;
   theme: ThemeProps;
-  changeTheme: (theme: ThemeProps) => void;
+  changeTheme: () => void;
 }
 
 interface ThemeContextProviderProps {
@@ -18,13 +19,15 @@ const ThemeContext = createContext({} as ThemeContextData)
 
 export const ThemeContextProvider = ({ children }: ThemeContextProviderProps) => {
   const [applicationTheme, setApplicationTheme] = useState<ThemeProps>('dark');
+  const isDarkMode = applicationTheme === 'dark';
 
-  const changeTheme = (theme: ThemeProps) => {
-    setApplicationTheme(theme)
+  const changeTheme = () => {
+    const invertedTheme = applicationTheme === 'dark' ? 'light' : 'dark';
+    setApplicationTheme(invertedTheme)
   }
 
   return (
-    <ThemeContext.Provider value={{ theme: applicationTheme, changeTheme }}>
+    <ThemeContext.Provider value={{ theme: applicationTheme, isDarkMode, changeTheme }}>
       <ThemeProvider theme={theme[applicationTheme]}>{children}</ThemeProvider>
     </ThemeContext.Provider>
   )
