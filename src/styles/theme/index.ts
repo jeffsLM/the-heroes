@@ -1,4 +1,6 @@
-const darkTheme = {
+import { ThemeContextType } from '@/types/theme';
+
+const darkTheme: ThemeContextType = {
   colors: {
     primary: '#ED1D24',
     secondary: '#545FFF',
@@ -12,14 +14,14 @@ const darkTheme = {
   },
   background: '#15192C',
   fonts: {
-    light: 300,
-    regular: 400,
-    medium: 500,
-    bold: 600,
+    light: 100,
+    regular: 300,
+    medium: 600,
+    bold: 700,
   },
 };
 
-const lightTheme = {
+const lightTheme: ThemeContextType = {
   colors: {
     primary: '#ED1D24',
     secondary: '#545FFF',
@@ -33,10 +35,10 @@ const lightTheme = {
   },
   background: '#F5F5F7',
   fonts: {
-    light: 300,
-    regular: 400,
-    medium: 500,
-    bold: 600,
+    light: 100,
+    regular: 300,
+    medium: 600,
+    bold: 700,
   },
 };
 
