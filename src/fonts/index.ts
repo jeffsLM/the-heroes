@@ -1,6 +1,7 @@
-import { Arimo } from 'next/font/google'
+import { Roboto } from 'next/font/google';
 
-export const arimo = Arimo({
+export const fonts = Roboto({
+  weight: ['100', '300', '400', '500', '700', '900'],
+  variable: '--roboto-font-family',
   subsets: ['latin'],
-  variable: '--arimo-font-family'
-})
+});

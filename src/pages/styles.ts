@@ -7,7 +7,6 @@ export const Container = styled.main`
   height: calc(100vh - 5rem);
 
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   background: ${({ theme }) => theme.background};
 `;

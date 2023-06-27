@@ -1,5 +1,5 @@
-import Image from 'next/image'
 import { Header } from '@/components/Header';
+import { Hero } from '@/components/Hero';
 
 import { Container } from './styles';
 
@@ -8,6 +8,7 @@ export default function Home() {
     <>
       <Header />
       <Container>
+        <Hero />
       </Container>
     </>
   )
