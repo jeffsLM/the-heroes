@@ -9,7 +9,7 @@ import { useTheme } from 'styled-components';
 import { Logo } from '@/components/Logo';
 import { useThemeChanger } from '@/contexts/Theme.context';
 
-import { Container, Content, Navigation, Version, IconContainer } from './styles';
+import { Container, Content, Navigation, Version, IconContainer, IconLink } from './styles';
 
 export const Header: React.FC = () => {
   const globalTheme = useTheme();
@@ -18,15 +18,26 @@ export const Header: React.FC = () => {
   return (
     <Container>
       <Content>
-        <Logo darkModeIsEnabled={isDarkMode} />
+        <Logo
+          darkModeIsEnabled={isDarkMode}
+          width='151'
+          height='58'
+          viewBox='0 0 281 58'
+          fill='none'
+        />
         <Navigation>
-          <IconContainer>
+          <IconLink
+            href="https://github.com/jeffsLM/the-heroes"
+            rel="noopener noreferrer"
+            target="_blank"
+            passHref
+          >
             <Version>v1.0.1</Version>
             <AiOutlineGithub
               size={24}
               color={globalTheme?.shadesOfGray.i1000}
             />
-          </IconContainer>
+          </IconLink>
           <IconContainer onClick={() => changeTheme()}>
             {isDarkMode ?
               <WiDaySunny

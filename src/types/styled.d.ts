@@ -1,7 +1,5 @@
 import 'styled-components';
-import { ThemeType } from './theme';
-
-//typeof copy characteristics from Theme
+import { ThemeContextType } from '@/types/theme';
 declare module 'styled-components' {
-  export interface DefaultTheme extends ThemeType {}
+  export interface DefaultTheme extends ThemeContextType {}
 }

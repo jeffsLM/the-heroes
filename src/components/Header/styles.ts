@@ -1,4 +1,5 @@
-import { styled } from 'styled-components';
+import Link from 'next/link';
+import styled, { css } from 'styled-components';
 
 export const Container = styled.header`
   height: 5rem;
@@ -22,21 +23,29 @@ export const Content = styled.div`
   padding: 0 2rem;
 `;
 
-export const IconContainer = styled.div`
+const IconContainerBase = css`
   display: flex;
   align-items: center;
   padding: 0.4rem;
   cursor: pointer;
+  border-radius: 3px;
 
   &:hover {
     background: ${({ theme }) => theme.shadesOfGray.i800 + '80'};
     transition: background 0.5s ease-out;
-    border-radius: 3px;
   }
 
   span {
     margin: 0.2rem 0.5rem 0rem 0rem;
   }
+`;
+
+export const IconLink = styled(Link)`
+  ${IconContainerBase}
+`;
+
+export const IconContainer = styled.div`
+  ${IconContainerBase}
 `;
 
 export const Navigation = styled.nav`

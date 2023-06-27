@@ -22,7 +22,7 @@ export const ThemeContextProvider = ({ children }: ThemeContextProviderProps) =>
   const isDarkMode = applicationTheme === 'dark';
 
   const changeTheme = () => {
-    const invertedTheme = applicationTheme === 'dark' ? 'light' : 'dark';
+    const invertedTheme = isDarkMode ? 'light' : 'dark';
     setApplicationTheme(invertedTheme)
   }
 
