@@ -3,7 +3,6 @@
 
 echo 'Styling your project before committing'
 
-
 # Check ESLint Standards
 yarn lint ||
 (
