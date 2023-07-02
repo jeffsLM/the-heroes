@@ -8,16 +8,18 @@ import { Container } from './styles';
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant: AvailableColorsVariants;
   icon?: ReactNode;
-  useLink?: boolean;
+  href?: string;
+  target?: string;
+  rel?: string;
 }
 
-export const Button: React.FC<ButtonProps> = ({ children, variant, icon, useLink, ...props }) => {
-  if (useLink) {
+export const Button: React.FC<ButtonProps> = ({ children, href, rel, target, variant, icon, ...props }) => {
+  if (href) {
     return (
       <Link
-        href="https://github.com/jeffsLM/the-heroes"
-        rel="noopener noreferrer"
-        target="_blank"
+        href={href || '/'}
+        rel={rel}
+        target={target}
         passHref
       >
         <Container
