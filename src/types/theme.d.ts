@@ -13,6 +13,7 @@ export type ThemeContextType = {
     i700: string;
   };
   background: string;
+  error: string;
   fonts: {
     light: number;
     regular: number;
