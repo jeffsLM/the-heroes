@@ -3,8 +3,8 @@ import React from 'react';
 import { AiOutlineGithub } from 'react-icons/ai';
 import { FiArrowRight } from 'react-icons/fi';
 
+import { HeroesLogo } from '@/assets/HeroesLogo';
 import { Button } from '@/components/Button';
-import { Logo } from '@/components/Logo';
 import { useThemeChanger } from '@/contexts/Theme.context';
 
 import { Container, Content, Subtitle, Title, Actions, Legend } from './styles';
@@ -23,7 +23,7 @@ export const Hero: React.FC = () => {
       />
       <Content>
         <Title>Welcome to</Title>
-        <Logo
+        <HeroesLogo
           darkModeIsEnabled={isDarkMode}
           viewBox='0 0 281 58'
           fill='none'
@@ -34,13 +34,16 @@ export const Hero: React.FC = () => {
       <Legend>any character at any time!</Legend>
       <Actions>
         <Button
+          href='/search'
           variant='primary'
           icon={<FiArrowRight size={20} />}
         >
           Start Program
         </Button>
         <Button
-          useLink
+          href='https://github.com/jeffsLM/the-heroes'
+          rel="noopener noreferrer"
+          target="_blank"
           variant='secondary'
           icon={<AiOutlineGithub size={20} />}
         >

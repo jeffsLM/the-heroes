@@ -9,13 +9,16 @@ const variantStyles = (theme: DefaultTheme, variant: AvailableColorsVariants) =>
   const styles = {
     primary: () => css`
       background: ${theme.colors.primary};
+      color: #f5f5f7;
     `,
     secondary: () => css`
       background: ${theme.background};
       border: 1.2px solid ${theme.shadesOfGray.i1000};
+      color: ${({ theme }) => theme.shadesOfGray.i1000};
     `,
     tertiary: () => css`
       background: ${theme.colors.tertiary};
+      color: ${({ theme }) => theme.shadesOfGray.i1000};
     `,
   };
   return styles[variant]();

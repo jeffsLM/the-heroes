@@ -1,15 +1,14 @@
+import { Container } from '@/components/Design/Container';
 import { Header } from '@/components/Header';
 import { Hero } from '@/components/Hero';
-
-import { Container } from './styles';
 
 export default function Home() {
   return (
     <>
       <Header />
-      <Container>
+      <Container.Root>
         <Hero />
-      </Container>
+      </Container.Root>
     </>
   )
 }

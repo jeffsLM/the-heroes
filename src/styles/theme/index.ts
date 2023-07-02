@@ -13,6 +13,7 @@ const darkTheme: ThemeContextType = {
     i700: '#3E3A66',
   },
   background: '#15192C',
+  error: '#ED1D24',
   fonts: {
     light: 100,
     regular: 300,
@@ -34,6 +35,7 @@ const lightTheme: ThemeContextType = {
     i700: '#F5F5F7',
   },
   background: '#F5F5F7',
+  error: '#ED1D24',
   fonts: {
     light: 100,
     regular: 300,
