@@ -1,4 +1,5 @@
 import { yupResolver } from '@hookform/resolvers/yup';
+import { useRouter } from 'next/router';
 import { useState } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form';
 import * as yup from 'yup';
@@ -21,22 +22,35 @@ const singInFormSchema = yup.object().shape({
 })
 
 export default function SearchPage() {
-  const [search, setSearch] = useState('spider');
+  const router = useRouter();
+  const { query } = router.query;
+
+  const [search, setSearch] = useState(query ? query.toString() : 'spider');
 
   const { data, isLoading, refetch: getCharacters } = useCharacters(
-    { nameStartsWith: search || '', limit: 15, orderBy: '-modified' },
-    { refetchOnWindowFocus: false });
+    { nameStartsWith: search as string, limit: 15, orderBy: '-modified' },
+    { refetchOnWindowFocus: true });
 
   const results = data?.data?.results;
   const existsDataToRender = (results?.length || [].length) > 0;
 
   const { register, handleSubmit, formState } = useForm({
-    resolver: yupResolver(singInFormSchema)
+    resolver: yupResolver(singInFormSchema),
+    defaultValues: {
+      search: search,
+    }
   })
   const { errors } = formState;
 
   const handleSearch: SubmitHandler<SearchFormData> = async (formData) => {
     setSearch(formData.search);
+    router.push({
+      pathname: '/search',
+      query: { query: formData.search }
+    },
+      undefined, { shallow: true }
+    );
+
     await getCharacters();
   }
 

@@ -52,7 +52,7 @@ export default function CharacterPage() {
         <List.Root>
           <List.Label
             isLoading={isLoadingComics}>
-            Last Comics
+            Latest Comics
           </List.Label>
           <List.Group
             numSkeletonToRender={10}
@@ -76,7 +76,7 @@ export default function CharacterPage() {
         <List.Root>
           <List.Label
             isLoading={isLoadingSeries}>
-            Last Series
+            Latest Series
           </List.Label>
           <List.Group
             numSkeletonToRender={10}
