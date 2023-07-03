@@ -1,5 +1,5 @@
-// import { yupResolver } from '@hookform/resolvers/yup/dist/yup';
-import { yupResolver } from '@hookform/resolvers/yup';
+import { yupResolver } from '@hookform/resolvers/yup/dist/yup';
+// import { yupResolver } from '@hookform/resolvers/yup';
 import { useState } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form';
 import * as yup from 'yup';
@@ -9,6 +9,7 @@ import { Form } from '@/components/Form';
 import { Search } from '@/components/Form/Search';
 import { Header } from '@/components/Header';
 import { List } from '@/components/List';
+import NoResults from '@/components/NoResults';
 
 import { useCharacters } from '@/services/hooks/useCharacters';
 
@@ -20,14 +21,15 @@ const singInFormSchema = yup.object().shape({
   search: yup.string().required(),
 })
 
-export default function Knowledge() {
+export default function SearchPage() {
   const [search, setSearch] = useState('spider');
 
   const { data, isLoading, refetch: getCharacters } = useCharacters(
-    { nameStartsWith: search, limit: 10, offset: 2, orderBy: '-modified' },
+    { nameStartsWith: search || '', limit: 15, orderBy: '-modified' },
     { refetchOnWindowFocus: false });
 
-  const results = data?.data.results;
+  const results = data?.data?.results;
+  const existsDataToRender = (results?.length || [].length) > 0;
 
   const { register, handleSubmit, formState } = useForm({
     resolver: yupResolver(singInFormSchema)
@@ -38,7 +40,6 @@ export default function Knowledge() {
     setSearch(formData.search);
     await getCharacters();
   }
-
 
   return (
     <>
@@ -55,30 +56,27 @@ export default function Knowledge() {
         <List.Root>
           <List.Label
             isLoading={isLoading}>
-            Characters
+            {search === 'spider' ? 'Favorite by Creator' : 'Characters'}
           </List.Label>
           <List.Group
-            numSkeletonToRender={10}
+            numSkeletonToRender={15}
             isLoading={isLoading}>
             {
-              !isLoading && results?.map(item => (
-                <List.Avatar
-                  href={`/characters/${item.id}`}
-                  isLoading={isLoading}
+              existsDataToRender ? results?.map(item => (
+                <List.Link
                   key={item.id}
-                  title={item.name}
-                  srcImage={item.thumbnail.path + '.' + item.thumbnail.extension}
-                  modifiedDate={item.modified}
-                />
-              ))
+                  href={`/characters/${item.id}`}
+                  passHref>
+                  <List.Avatar
+                    isLoading={isLoading}
+                    title={item.name}
+                    srcImage={item.thumbnail.path + '.' + item.thumbnail.extension}>
+                    <List.Date modifiedDate={item.modified} />
+                  </List.Avatar>
+                </List.Link>
+              )) : <NoResults />
             }
           </List.Group>
-        </List.Root>
-        <List.Root>
-          <List.Label
-            isLoading={isLoading}>
-            Comics
-          </List.Label>
         </List.Root>
       </Container.Flex >
     </>

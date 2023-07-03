@@ -1,7 +1,6 @@
-import Link from 'next/link';
 import styled from 'styled-components';
 
-export const Item = styled(Link)`
+export const Item = styled.div`
   position: relative;
   display: inline-block;
   transition: all 0.3s ease;

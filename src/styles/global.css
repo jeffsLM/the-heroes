@@ -26,3 +26,7 @@ a {
     font-size: 87.5%;
   }
 }
+
+body::-webkit-scrollbar {
+  width: 0px;
+}

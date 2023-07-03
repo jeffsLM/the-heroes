@@ -1,6 +1,10 @@
 import { Results } from '../base';
 
-export interface ICharacters {
+export interface ResultsComics extends Results {
+  title: string;
+}
+
+export interface IComics {
   code: number;
   status: string;
   copyright: string;
@@ -11,7 +15,7 @@ export interface ICharacters {
     limit: number;
     total: number;
     count: number;
-    results: Results[];
+    results: ResultsComics[];
   };
   etag: string;
 }

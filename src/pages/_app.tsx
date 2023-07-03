@@ -4,6 +4,7 @@ import { QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
 
 import { Background } from '@/components/Design/Background';
+import { Footer } from '@/components/Footer';
 import { ThemeContextProvider } from '@/contexts/Theme.context';
 
 import { fonts } from '@/fonts';
@@ -19,8 +20,15 @@ export default function App({ Component, pageProps }: AppProps) {
         <Background className={fonts.className}>
           <Head>
             <title>THE HEROES</title>
+            <meta
+              name="description"
+              content="The Heros knowleadgebase! Get any Marvel Comics information,
+              any character at any time!"
+              key="desc"
+            />
           </Head>
           <Component {...pageProps} />
+          <Footer />
         </Background>
       </ThemeContextProvider>
       <ReactQueryDevtools />

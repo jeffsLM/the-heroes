@@ -1,25 +1,19 @@
 import Image from 'next/image';
-import { LinkProps } from 'next/link';
-import React from 'react';
-import { MdDateRange } from 'react-icons/md';
+import React, { ReactElement, HtmlHTMLAttributes } from 'react';
+import { Item, Content, Tittle } from './styles';
 
-import { Item, Content, Tittle, DateContainer } from './styles';
-
-interface ListDisplayerProps extends LinkProps {
+interface ListDisplayerProps extends HtmlHTMLAttributes<HTMLDivElement> {
   isLoading: boolean;
   srcImage: string;
   title: string;
-  modifiedDate: Date;
+  children: ReactElement;
 }
 
-export const ListAvatar: React.FC<ListDisplayerProps> = ({ modifiedDate, title, srcImage, ...props }) => {
+export const ListAvatar: React.FC<ListDisplayerProps> = ({ children, title, srcImage, ...props }) => {
   return (
-    <Item passHref {...props}>
+    <Item {...props}>
       <Content>
-        <DateContainer>
-          <MdDateRange size={20} />
-          {new Date(modifiedDate).getFullYear()}
-        </DateContainer>
+        {children}
         <Tittle>{title}</Tittle>
         <Image
           src={srcImage}
@@ -29,7 +23,7 @@ export const ListAvatar: React.FC<ListDisplayerProps> = ({ modifiedDate, title, 
           alt={`image: ${title}`}
         />
       </Content>
-    </Item>
+    </Item >
   );
 }
 
