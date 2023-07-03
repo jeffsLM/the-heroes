@@ -1,38 +1,67 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<div align="center">
+    <img src="https://github.com/jeffsLM/the-heroes/raw/master/public/images/logo.png" alt="PRG Logo">
+</div>
 
-## Getting Started
+<h1 align="center">THE HEROS - Knowledge Base</h1>
+<div  align="center">
 
-First, run the development server:
+![Next JS](https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white)
+![Badge](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![Styled Components](https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white)
+
+![Badge](https://img.shields.io/badge/HUSKY-black?style=for-the-badge)
+![Badge](https://img.shields.io/badge/YUP-319795?style=for-the-badge)
+![React Hook Form](https://img.shields.io/badge/React%20Hook%20Form-%23EC5990.svg?style=for-the-badge&logo=reacthookform&logoColor=white)
+
+</div>
+<p align="center">Welcome to THE HEROS knowledge base! Get any Marvel Comics information,
+any character at any time!.</p>
+
+<h2>About the project </h2>
+
+<p>
+The Heros is a simple project with the intention of consuming the information provided by  <a href="https://developer.marvel.com/" rel="nofollow">Marvel for Developers</a> and categorizing it in a simple and playful way in order to let your query be done in the most intuitive way possible.</p>
+
+<div align="center">
+    <img height="400px" src="https://github.com/jeffsLM/the-heroes/raw/master/public/images/screenshot/homePage.PNG" alt="Fox Anima Logo">
+</div>
+
+<p>
+Check out the project on page <a href="https://the-heroes.vercel.app/" rel="nofollow">https://the-heroes.vercel.app/</a></p>
+
+<h2>Getting Started</h2>
+<p>To run the aplication in your computer, first run the following command to install the dependencies:</p>
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+ yarn install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**Note: husky will be installed after installation**
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+<p>Now,
+create a file called <code>.env.local</code> containing a private key and public key. </p>
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+```bash
+NEXT_PUBLIC_API_PRIVATE_KEY=PROVIDED_BY_MARVEL_DEVELOPERS
+NEXT_PUBLIC_API_PUBLIC_KEY=PROVIDED_BY_MARVEL_DEVELOPERS
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+<p>Now, run one of the following commands in your terminal to start the application</p>
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+```bash
+ yarn dev
+```
 
-## Learn More
+<h2>Contributing</h2>
+<p>Feel like contributing? Fantastic! Feel free to open a <a href="https://github.com/jeffsLM/the-heroes/pulls">PR</a></p>
 
-To learn more about Next.js, take a look at the following resources:
+<h2>License</h2>
+<p>MIT © <a href="https://github.com/jeffsLM">jeffsLM</a></p>
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+<h2>Data provided</h2>
+<p>by Marvel. © 2023 <a href="http://marvel.com">MARVEL</a></p>
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+<h2>Remember...</h2>
+<div align="center">
+    <img src="https://github.com/jeffsLM/the-heroes/raw/master/public/images/herosNeverDie.png" alt="PRG Logo">
+</div>
