@@ -1,5 +1,4 @@
-import { yupResolver } from '@hookform/resolvers/yup/dist/yup';
-// import { yupResolver } from '@hookform/resolvers/yup';
+import { yupResolver } from '@hookform/resolvers/yup';
 import { useState } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form';
 import * as yup from 'yup';
