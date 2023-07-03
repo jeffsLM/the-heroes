@@ -20,10 +20,6 @@ export const Header: React.FC = () => {
       <Content>
         <Logo
           darkModeIsEnabled={isDarkMode}
-          width='151'
-          height='58'
-          viewBox='0 0 281 58'
-          fill='none'
         />
         <Navigation>
           <IconLink
