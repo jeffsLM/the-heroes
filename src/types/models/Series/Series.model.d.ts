@@ -1,6 +1,12 @@
 import { Results } from '../base';
 
-export interface ICharacters {
+export interface ResultsSeries extends Results {
+  title: string;
+  startYear: string;
+  endYear: string;
+}
+
+export interface ISeries {
   code: number;
   status: string;
   copyright: string;
@@ -11,7 +17,7 @@ export interface ICharacters {
     limit: number;
     total: number;
     count: number;
-    results: Results[];
+    results: ResultsSeries[];
   };
   etag: string;
 }
